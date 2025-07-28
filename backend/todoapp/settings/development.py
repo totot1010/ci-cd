@@ -7,19 +7,19 @@ from decouple import config
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME', default='todoapp'),
-        'USER': config('DATABASE_USER', default='todouser'),
-        'PASSWORD': config('DATABASE_PASSWORD', default='todopass'),
-        'HOST': config('DATABASE_HOST', default='db'),
-        'PORT': config('DATABASE_PORT', default='5432'),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("DATABASE_NAME", default="todoapp"),
+        "USER": config("DATABASE_USER", default="todouser"),
+        "PASSWORD": config("DATABASE_PASSWORD", default="todopass"),
+        "HOST": config("DATABASE_HOST", default="db"),
+        "PORT": config("DATABASE_PORT", default="5432"),
     }
 }
 
@@ -35,15 +35,15 @@ CORS_ALLOWED_ORIGINS = [
 
 # ログ設定
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
         },
     },
-    'root': {
-        'handlers': ['console'],
-        'level': 'DEBUG',
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG",
     },
 }
