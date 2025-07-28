@@ -70,7 +70,7 @@ npm install
 cp .env.example .env.local
 npm start
 ```
-
+****
 4. 管理者ユーザーを作成（任意）
 ```bash
 cd backend
