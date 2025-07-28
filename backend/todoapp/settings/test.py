@@ -2,6 +2,7 @@
 テスト環境用の設定
 """
 from .base import *
+import os
 
 # テスト時はDEBUGをFalseに
 DEBUG = False
@@ -12,11 +13,11 @@ ALLOWED_HOSTS = ["testserver", "localhost", "127.0.0.1"]
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "test_todoapp",
-        "USER": "todouser",
-        "PASSWORD": "todopass",
-        "HOST": "db",
-        "PORT": "5432",
+        "NAME": os.getenv("POSTGRES_DB", "postgres"),
+        "USER": os.getenv("POSTGRES_USER", "postgres"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "postgres"),
+        "HOST": os.getenv("POSTGRES_HOST", "localhost"),
+        "PORT": os.getenv("POSTGRES_PORT", "5432"),
     }
 }
 

@@ -29,7 +29,7 @@ services:
       DATABASE_PORT: 5432
       DEBUG: "True"
       SECRET_KEY: "django-insecure-development-key"
-      DJANGO_ENV: development
+      ENV: development
 
 volumes:
   postgres_data:

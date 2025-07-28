@@ -3,7 +3,7 @@
 """
 import os
 
-env = os.environ.get("DJANGO_ENV", "development")
+env = os.environ.get("ENV", "development")
 
 if env == "production":
     from todoapp.settings.production import *
