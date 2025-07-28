@@ -58,10 +58,14 @@ jobs:
           POSTGRES_PORT: 5432
         run: |
           cd backend
-          pytest
+          pytest .
 
       - name: Run Lint
-        run: flake8 backend
+        run: |
+          cd backend
+          flake8 .
 
       - name: Run Format Check
-        run: black --check backend
+        run: |
+          cd backend
+          black --check .
