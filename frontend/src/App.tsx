@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import type { Todo, TodoInput } from "./types/todo";
-import { todoApi } from "./services/api";
-import { TodoList } from "./components/TodoList";
-import { TodoForm } from "./components/TodoForm";
+import { useState, useEffect } from 'react';
+import './App.css';
+import type { Todo, TodoInput } from './types/todo';
+import { todoApi } from './services/api';
+import { TodoList } from './components/TodoList';
+import { TodoForm } from './components/TodoForm';
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -23,7 +23,7 @@ function App() {
       setTodos(data);
       setError(null);
     } catch (err) {
-      setError("Todoの取得に失敗しました");
+      setError('Todoの取得に失敗しました');
       console.error(err);
     } finally {
       setLoading(false);
@@ -37,7 +37,7 @@ function App() {
       setShowForm(false);
       setError(null);
     } catch (err) {
-      setError("Todoの作成に失敗しました");
+      setError('Todoの作成に失敗しました');
       console.error(err);
     }
   };
@@ -54,7 +54,7 @@ function App() {
       setShowForm(false);
       setError(null);
     } catch (err) {
-      setError("Todoの更新に失敗しました");
+      setError('Todoの更新に失敗しました');
       console.error(err);
     }
   };
@@ -70,20 +70,20 @@ function App() {
       setTodos(todos.map((t) => (t.id === id ? updatedTodo : t)));
       setError(null);
     } catch (err) {
-      setError("Todoの更新に失敗しました");
+      setError('Todoの更新に失敗しました');
       console.error(err);
     }
   };
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm("このTodoを削除しますか？")) return;
+    if (!window.confirm('このTodoを削除しますか？')) return;
 
     try {
       await todoApi.delete(id);
       setTodos(todos.filter((todo) => todo.id !== id));
       setError(null);
     } catch (err) {
-      setError("Todoの削除に失敗しました");
+      setError('Todoの削除に失敗しました');
       console.error(err);
     }
   };

@@ -1,5 +1,5 @@
-import React from "react";
-import type { Todo } from "../types/todo";
+import React from 'react';
+import type { Todo } from '../types/todo';
 
 interface TodoItemProps {
   todo: Todo;
@@ -23,7 +23,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
           onChange={() => onToggle(todo.id)}
           className="todo-checkbox"
         />
-        <div className={`todo-text ${todo.completed ? "completed" : ""}`}>
+        <div className={`todo-text ${todo.completed ? 'completed' : ''}`}>
           <h3>{todo.title}</h3>
           {todo.description && <p>{todo.description}</p>}
         </div>
