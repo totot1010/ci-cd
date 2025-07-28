@@ -5,10 +5,10 @@ export type Todo = {
   completed: boolean;
   created_at: string;
   updated_at: string;
-}
+};
 
 export type TodoInput = {
   title: string;
   description: string;
   completed?: boolean;
-}
+};

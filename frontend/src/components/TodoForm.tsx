@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import type { Todo, TodoInput } from "../types/todo";
+import React, { useState, useEffect } from 'react';
+import type { Todo, TodoInput } from '../types/todo';
 
 interface TodoFormProps {
   todo?: Todo | null;
@@ -12,16 +12,16 @@ export const TodoForm: React.FC<TodoFormProps> = ({
   onSubmit,
   onCancel,
 }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
 
   useEffect(() => {
     if (todo) {
       setTitle(todo.title);
       setDescription(todo.description);
     } else {
-      setTitle("");
-      setDescription("");
+      setTitle('');
+      setDescription('');
     }
   }, [todo]);
 
@@ -32,14 +32,14 @@ export const TodoForm: React.FC<TodoFormProps> = ({
         title: title.trim(),
         description: description.trim(),
       });
-      setTitle("");
-      setDescription("");
+      setTitle('');
+      setDescription('');
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="todo-form">
-      <h2>{todo ? "Todoを編集" : "新しいTodoを追加"}</h2>
+      <h2>{todo ? 'Todoを編集' : '新しいTodoを追加'}</h2>
       <div className="form-group">
         <input
           type="text"
@@ -61,7 +61,7 @@ export const TodoForm: React.FC<TodoFormProps> = ({
       </div>
       <div className="form-actions">
         <button type="submit" className="btn-primary">
-          {todo ? "更新" : "追加"}
+          {todo ? '更新' : '追加'}
         </button>
         <button type="button" onClick={onCancel} className="btn-secondary">
           キャンセル
