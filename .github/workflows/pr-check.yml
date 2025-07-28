@@ -3,9 +3,16 @@ name: PR Check
 on:
   pull_request:
     branches: [main]
+    paths:
+      - "backend/**"
+      - ".github/workflows/pr-check.yml"
 
 env:
   ENV: test
+
+defaults:
+  run:
+    working-directory: backend
 
 jobs:
   pr-check:
@@ -50,15 +57,12 @@ jobs:
           POSTGRES_HOST: localhost
           POSTGRES_PORT: 5432
         run: |
-          cd backend
           pytest .
 
       - name: Run Lint
         run: |
-          cd backend
           flake8 .
 
       - name: Run Format Check
         run: |
-          cd backend
           black --check .
