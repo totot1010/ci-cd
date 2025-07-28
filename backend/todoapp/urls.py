@@ -7,9 +7,9 @@ from rest_framework import routers
 from todos import views
 
 router = routers.DefaultRouter()
-router.register(r'todos', views.TodoViewSet)
+router.register(r"todos", views.TodoViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),
 ]
