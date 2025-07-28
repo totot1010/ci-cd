@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  ENV: test
+
 jobs:
   pr-check:
     runs-on: ubuntu-latest
@@ -46,7 +49,7 @@ jobs:
 
       - name: Run Tests
         env:
-          DJANGO_ENV: test
+          ENV: test
           SECRET_KEY: test-secret-key-for-ci
           POSTGRES_DB: postgres
           POSTGRES_USER: postgres
