@@ -71,5 +71,5 @@ GitHub Actions
 ### トレードオフ
 - OSによって分単価が異なる
   - 特にmacOSとWindowsはLinuxの10倍
-- リポジトリがGitHubへの移行が難しい
+- GitHubから別のリポジトリへの移行が面倒くさい
 - 
