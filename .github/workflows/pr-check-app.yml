@@ -3,9 +3,6 @@ name: PR Check App
 on:
   pull_request:
     branches: [main]
-    paths:
-      - "frontend/**"
-      - ".github/workflows/pr-check-app.yml"
 
 defaults:
   run:

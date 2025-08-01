@@ -3,9 +3,6 @@ name: PR Check
 on:
   pull_request:
     branches: [main]
-    paths:
-      - "backend/**"
-      - ".github/workflows/pr-check.yml"
 
 env:
   ENV: test
