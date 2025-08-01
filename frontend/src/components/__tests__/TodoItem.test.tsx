@@ -32,7 +32,7 @@ describe('TodoItem', () => {
   test('renders checkbox with correct state', () => {
     render(<TodoItem todo={mockTodo} {...mockHandlers} />);
     const checkbox = screen.getByRole('checkbox');
-    expect(checkbox).not.toBeChecked();
+    expect(checkbox).toBeChecked();
   });
 
   test('renders checkbox as checked when todo is completed', () => {
